@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamenSamuelMarin</title>
+</head>
+<body>
+    
+    <form>
+		<fieldset>
+			<legend>Problema</legend>
+			Text: <input type="text" id="cadenausuari" size="50"><span id='aviscadena'></span><br>
+			Caràcter: <input type="text" id="trobarcaracter" size="1"><span id='aviscaracter'></span><br>
+			<input type="button" value="INICIAR" onclick="buscarparaules()">
+		</fieldset>
+	</form>
+    <script>
+        
+    function buscarparaules(){
+        let cadena = document.getElementById('cadenausuari').value;
+        let trobar = document.getElementById('trobarcaracter').value;
+        let minusculescadena = cadena.toLowerCase();
+        let minusculestrobar = trobar.toLowerCase();
+        let guardarvocals=0;
+
+        for (let i = 0; i < cadena.length; i++) {
+        let guardarcaracter = minusculescadena.charAt(i);
+
+        if (minusculestrobar.indexOf(guardarcaracter) !== -1) {
+            guardarvocals++; 
+        }
+    }
+        alert("vocals que s'han trobat: "+guardarvocals);
+        guardarvocals=0;
+
+    }
+
+    </script>
+
+</body>
+</html>
